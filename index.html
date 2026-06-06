@@ -910,6 +910,55 @@ body.light .proj-card:hover .proj-stack span {
   background: rgba(5,150,105,0.07);
 }
 
+/* ========== PROJECT BUTTONS ========== */
+.proj-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.proj-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  cursor: pointer;
+}
+.proj-btn:hover {
+  border-color: rgba(16,185,129,0.5);
+  background: rgba(16,185,129,0.12);
+  color: var(--green-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16,185,129,0.15);
+}
+.proj-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s;
+}
+.proj-btn:hover svg {
+  transform: scale(1.1);
+}
+/* Light mode project buttons */
+body.light .proj-btn {
+  border-color: rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.03);
+  color: rgba(0,0,0,0.7);
+}
+body.light .proj-btn:hover {
+  border-color: rgba(5,150,105,0.5);
+  background: rgba(5,150,105,0.12);
+  color: #059669;
+}
+
 /* ========== CONTACT SECTION ========== */
 .contact-section {
   min-height: 100vh;
@@ -1114,7 +1163,7 @@ body.light .contact-deco { color: rgba(0,0,0,0.04); }
   .contact-section { padding: 80px 30px; }
   .contact-headline { font-size: 15vw; }
 }
-@media(max-width: 500px) {
+@media(max-width: 700px) {
   .projects-grid { grid-template-columns: 1fr; }
   .proj-card--wide { grid-column: span 1; }
   .toc-grid { grid-template-columns: 1fr; }
@@ -1396,7 +1445,7 @@ body.light .back-to-top:hover {
 <section class="toc-section">
   <div class="toc-topbar reveal">
     <span class="toc-topbar-label">Creative Presentation</span>
-    <div class="toc-topbar-arrow">
+    <div class="toc-topbar-arrow"> 
       <svg viewBox="0 0 80 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="0" y1="6" x2="68" y2="6" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
         <path d="M62 1L78 6L62 11" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/>
@@ -1484,32 +1533,78 @@ body.light .back-to-top:hover {
   <div class="edu-timeline">
     <div class="edu-card reveal">
       <div class="edu-top">
-        <div class="edu-degree">Bachelor of Technology<br>in Computer Engineering</div>
+        <div class="edu-degree">Bachelor of Technology (B.Tech)<br>Computer Engineering</div>
         <div class="edu-year">2025 — 2029</div>
       </div>
-      <div class="edu-university">Mumbai University</div>
-      <div class="edu-college">Anjuman-i-Islam's Kalsekar Technical Campus, SoET</div>
+      <div class="edu-university">Anjuman-I-Islam's Kalsekar Technical Campus (AIKTC)</div>
+      <div class="edu-college">Second Year (Semester III)</div>
       <div class="edu-meta">
         <div class="edu-badge">
           <div>
-            <div class="badge-label">CGPA · Sem 1</div>
-            <div class="badge-value">8.4 / 10</div>
+            <div class="badge-label">Sem I SGPA</div>
+            <div class="badge-value">8.40</div>
           </div>
         </div>
         <div class="edu-badge">
           <div>
-            <div class="badge-label">Current</div>
-            <div class="badge-value">Semester 2</div>
+            <div class="badge-label">Sem II SGPA</div>
+            <div class="badge-value">N/A</div>
           </div>
         </div>
         <div class="edu-badge">
           <div>
-            <div class="badge-label">Degree</div>
-            <div class="badge-value">B.Tech</div>
+            <div class="badge-label">Status</div>
+            <div class="badge-value">Pursuing</div>
           </div>
         </div>
       </div>
-      <div class="edu-status">Currently Enrolled</div>
+      <div class="edu-status">Currently Pursuing</div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-top">
+        <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+        <div class="edu-year">2025</div>
+      </div>
+      <div class="edu-university">Ramniranjan Jhunjhunwala College of Science, Commerce and Arts</div>
+      <div class="edu-college">Class 12</div>
+      <div class="edu-meta">
+        <div class="edu-badge">
+          <div>
+            <div class="badge-label">Percentage</div>
+            <div class="badge-value">54.5%</div>
+          </div>
+        </div>
+        <div class="edu-badge">
+          <div>
+            <div class="badge-label">Board</div>
+            <div class="badge-value">MH State</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-top">
+        <div class="edu-degree">Secondary School Certificate (SSC)</div>
+        <div class="edu-year">2023</div>
+      </div>
+      <div class="edu-university">SIS Hindi High School English Medium</div>
+      <div class="edu-college">Class 10</div>
+      <div class="edu-meta">
+        <div class="edu-badge">
+          <div>
+            <div class="badge-label">Percentage</div>
+            <div class="badge-value">68.4%</div>
+          </div>
+        </div>
+        <div class="edu-badge">
+          <div>
+            <div class="badge-label">Board</div>
+            <div class="badge-value">MH State</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1530,6 +1625,17 @@ body.light .back-to-top:hover {
         <h2 class="proj-name">Amazon Clone</h2>
         <p class="proj-desc">A pixel-faithful frontend clone of Amazon's homepage and product listing UI, built with HTML &amp; CSS.</p>
         <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="proj-actions">
+          <a href="https://khanshafi5433.github.io/AmazingAmazon/" class="proj-btn" target="_blank" aria-label="View Live Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Live Demo
+          </a>
+          <!-- TODO: Replace with actual Source Code URL if available -->
+        </div>
       </div>
       <div class="proj-line"></div>
     </div>
@@ -1543,6 +1649,18 @@ body.light .back-to-top:hover {
         <h2 class="proj-name">Calculator</h2>
         <p class="proj-desc">A clean, functional calculator with keyboard support, chained operations, and smooth button interactions.</p>
         <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="proj-actions">
+          <!-- TODO: Replace with actual Live Demo URL -->
+          <a href="#" class="proj-btn" target="_blank" aria-label="View Live Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Live Demo
+          </a>
+          <!-- TODO: Replace with actual Source Code URL if available -->
+        </div>
       </div>
       <div class="proj-line"></div>
     </div>
@@ -1556,6 +1674,17 @@ body.light .back-to-top:hover {
         <h2 class="proj-name">Netflix Clone</h2>
         <p class="proj-desc">Basic UI clone of Netflix's landing page and browse screen — responsive layout with styled cards and hero banner.</p>
         <div class="proj-stack"><span>HTML</span><span>CSS</span></div>
+        <div class="proj-actions">
+          <a href="https://khanshafi5433.github.io/MoviesHub/" class="proj-btn" target="_blank" aria-label="View Live Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Live Demo
+          </a>
+          <!-- TODO: Replace with actual Source Code URL if available -->
+        </div>
       </div>
       <div class="proj-line"></div>
     </div>
@@ -1569,6 +1698,17 @@ body.light .back-to-top:hover {
         <h2 class="proj-name">Spotify Clone</h2>
         <p class="proj-desc">Spotify's UI recreated with a functional sidebar, music card grid, and playback bar — fully responsive.</p>
         <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="proj-actions">
+          <a href="https://khanshafi5433.github.io/CloneMusic/" class="proj-btn" target="_blank" aria-label="View Live Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Live Demo
+          </a>
+          <!-- TODO: Replace with actual Source Code URL if available -->
+        </div>
       </div>
       <div class="proj-line"></div>
     </div>
@@ -1582,6 +1722,17 @@ body.light .back-to-top:hover {
         <h2 class="proj-name">Smart Election System</h2>
         <p class="proj-desc">A digital election management platform integrated with Google Sheets for live vote recording and result tracking — eliminating manual tallying errors.</p>
         <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google Sheets API</span><span>Apps Script</span></div>
+        <div class="proj-actions">
+          <a href="https://khanshafi5433.github.io/e-vote-realtime-system/" class="proj-btn" target="_blank" aria-label="View Live Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Live Demo
+          </a>
+          <!-- TODO: Replace with actual Source Code URL if available -->
+        </div>
       </div>
       <div class="proj-line"></div>
     </div>
@@ -1595,6 +1746,18 @@ body.light .back-to-top:hover {
         <h2 class="proj-name">Automated Gas Regulation System</h2>
         <p class="proj-desc">Arduino-based IoT system that monitors gas levels via sensors, automatically cuts the valve on detection, and fires an SMS alert to the owner in real time.</p>
         <div class="proj-stack"><span>Arduino</span><span>C++</span><span>Gas Sensor</span><span>GSM Module</span><span>Relay</span></div>
+        <div class="proj-actions">
+          <!-- TODO: Replace with actual Live Demo URL (hardware project) -->
+          <a href="#" class="proj-btn" target="_blank" aria-label="View Live Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Live Demo
+          </a>
+          <!-- TODO: Replace with actual Source Code URL if available -->
+        </div>
       </div>
       <div class="proj-line"></div>
     </div>
@@ -1608,6 +1771,53 @@ body.light .back-to-top:hover {
         <h2 class="proj-name">Flappy Bird</h2>
         <p class="proj-desc">A fully playable browser recreation of Flappy Bird — smooth canvas-based animation, collision detection, score tracking, and a pixel-art aesthetic. Tap or press Space to fly.</p>
         <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Canvas API</span></div>
+        <div class="proj-actions">
+          <a href="https://khanshafi5433.github.io/Flappy-Bird/" class="proj-btn" target="_blank" aria-label="View Live Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Live Demo
+          </a>
+          <!-- TODO: Replace with actual Source Code URL if available -->
+        </div>
+      </div>
+      <div class="proj-line"></div>
+    </div>
+
+    <div class="proj-card proj-card--wide reveal-scale" data-tag="AI / ML">
+      <div class="proj-card-inner">
+        <div class="proj-top">
+          <div class="proj-icon">&#128187;</div>
+          <div class="proj-tag">AI / ML</div>
+        </div>
+        <h2 class="proj-name">TruthLens AI</h2>
+        <p class="proj-desc">AI-powered misinformation detection and media verification platform that analyzes uploaded content, identifies potential misinformation, provides credibility insights, and helps users make informed decisions using modern AI technologies.</p>
+        <div class="proj-stack"><span>React</span><span>JavaScript</span><span>AI APIs</span><span>Netlify</span><span>Firebase</span></div>
+        <div class="proj-actions">
+          <a href="https://github.com/KhanShafi5433/TruthLensV2.0" class="proj-btn" target="_blank" aria-label="View Source Code">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            Source Code
+          </a>
+          <a href="https://truthlenswebapp.netlify.app" class="proj-btn" target="_blank" aria-label="View Live Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Live Demo
+          </a>
+          <a href="https://youtu.be/XaspRsRHSGY?si=kR6zdxWVlYbpBXP-" class="proj-btn" target="_blank" aria-label="View YouTube Demo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+            YouTube Demo
+          </a>
+        </div>
       </div>
       <div class="proj-line"></div>
     </div>
@@ -1682,7 +1892,7 @@ body.light .back-to-top:hover {
           <div class="contact-link-arrow">→</div>
         </a>
 
-        <a href="https://www.linkedin.com/in/khan-shafi" target="_blank" class="contact-link reveal">
+        <a href="https://www.linkedin.com/in/khanshafi5433/" target="_blank" class="contact-link reveal">
           <div class="contact-link-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--green-glow)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
